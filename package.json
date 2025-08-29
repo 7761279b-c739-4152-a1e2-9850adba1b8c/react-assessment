@@ -1,0 +1,21 @@
+{
+  "name": "react_assessment",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "check": "npx tsc"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^6.3.5",
+    "@types/react": "^19.1.10",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
