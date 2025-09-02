@@ -8,6 +8,19 @@ body {
     font-family: sans-serif;
 }
 
+p {
+    margin: 0;
+}
+h1 {
+    margin: 1rem 0 1rem;
+}
+h2 {
+    margin: 0 0 1rem;
+}
+h3 {
+    margin: 0 0 1rem;
+}
+
 .container {
     margin-right: auto;
     margin-left: auto;
@@ -15,9 +28,15 @@ body {
     padding-right: 15px;
 }
 
+.products-list-wrapper {
+    margin: 1rem 0;
+    background-color: #fea;
+    padding: 1rem;
+    border-radius: 1rem;
+}
 .products-list {
     list-style-type: none;
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .product-card {
@@ -42,3 +61,40 @@ body {
     font-weight: 500;
     font-size: 1.1rem;
 }
+
+.filters-wrapper {
+    margin: 1rem 0;
+    background-color: #Cfc;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.filters h3 {
+    margin: 0 0 1rem;
+}
+
+.filter-grid {
+    max-width: 555px;
+    display: grid;
+    gap: 0.25rem;
+    margin: 0.25rem 0;
+    grid-template-areas:
+        "a11 a12 . ."
+        "a21 a22 . ."
+        "a31 a32 a33 a34"
+        "a41 a42 . .";
+}
+.filter-grid .grid-33 {
+    text-align: center;
+}
+
+.grid-11 {grid-area: a11;}
+.grid-12 {grid-area: a12;}
+.grid-21 {grid-area: a21;}
+.grid-22 {grid-area: a22;}
+.grid-31 {grid-area: a31;}
+.grid-32 {grid-area: a32;}
+.grid-33 {grid-area: a33;}
+.grid-34 {grid-area: a34;}
+.grid-41 {grid-area: a41;}
+.grid-42 {grid-area: a42;}

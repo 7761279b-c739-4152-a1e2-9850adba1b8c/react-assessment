@@ -3,7 +3,7 @@ import { Product } from "../data/products";
 export function ProductCard({ product }: { product: Product; }) {
     return (
         <li className="product-card">
-            <img src={ product.imageUrl ?? null}></img>
+            <img src={ product.imageUrl ? product.imageUrl : undefined}></img>
             <div>
                 <h3>{ product.name }</h3>
                 <p>{ product.category }</p>
