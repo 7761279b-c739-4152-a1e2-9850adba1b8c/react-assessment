@@ -14,3 +14,31 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.products-list {
+    list-style-type: none;
+    padding: 0 1rem;
+}
+
+.product-card {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+.product-card img {
+    flex-basis: 100px;
+    height: 100px;
+    margin-right: 1rem;
+}
+.product-card h3 {
+    margin: 0.25rem 0;
+    font-weight: 700;
+    font-size: 1.17rem;
+}
+.product-card p {
+    margin: 0;
+}
+.product-card .price {
+    font-weight: 500;
+    font-size: 1.1rem;
+}

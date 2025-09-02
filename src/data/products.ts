@@ -43,7 +43,7 @@ export const products: Product[] = [
         id: 4,
         name: "Product 4",
         category: "Electronics",
-        price: 1.00,
+        price: 4.50,
         rating: 1,
         inStock: true,
         imageUrl: ''
@@ -52,7 +52,7 @@ export const products: Product[] = [
         id: 5,
         name: "Product 5",
         category: "Books",
-        price: 2.00,
+        price: 5.12,
         rating: 2,
         inStock: false,
         imageUrl: ''
@@ -61,7 +61,7 @@ export const products: Product[] = [
         id: 6,
         name: "Product 6",
         category: "Clothing",
-        price: 3.00,
+        price: 9.99,
         rating: 3,
         inStock: true,
         imageUrl: ''
