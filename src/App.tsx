@@ -5,7 +5,7 @@ import { ProductsContext } from "./context/ProductsContext";
 import { Container } from "./components/Container";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
-import { ProductsList } from "./components/ProductsList";
+import { ProductsListWrapper } from "./components/ProductsListWrapper";
 import { Product, products as product_data } from "./data/products";
 
 
@@ -17,7 +17,7 @@ export function App() {
             <ProductsContext value={{ products, setProducts }}>
                 <Header></Header>
                 <Main>
-                    <ProductsList></ProductsList>
+                    <ProductsListWrapper></ProductsListWrapper>
                 </Main>
             </ProductsContext>
         </Container>
