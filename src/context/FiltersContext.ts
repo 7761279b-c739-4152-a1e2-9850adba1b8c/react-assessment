@@ -1,7 +1,6 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
-
-export const FiltersContext = createContext<{
+interface FiltersContext {
     search: string
     setSearch: Dispatch<SetStateAction<string>>;
     category: string
@@ -12,4 +11,6 @@ export const FiltersContext = createContext<{
     setMaxPrice: Dispatch<SetStateAction<number>>;
     stock: boolean
     setStock: Dispatch<SetStateAction<boolean>>;
-}>(null);
+}
+
+export const FiltersContext = createContext<FiltersContext>({} as FiltersContext);
