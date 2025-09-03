@@ -1,8 +1,10 @@
+import { ProductsListWrapper } from "../components/ProductsListWrapper";
 
-export function Main({ children }) {
+export function Main() {
+    
     return (
         <main>
-            {children}
+            <ProductsListWrapper></ProductsListWrapper>
         </main>
     )
 }
