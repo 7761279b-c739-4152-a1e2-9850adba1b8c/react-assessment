@@ -19,6 +19,7 @@ export function ProductsList() {
 
 function ProductsListLoaded() {
     const { search, category, minPrice, maxPrice, stock, sort } = use(FiltersContext);
+    const perPage = 40;
 
     const apiProducts = use(productsPromise);
     const [products, setProducts] = useState<Product[]>(apiProducts);
@@ -27,7 +28,7 @@ function ProductsListLoaded() {
         (category == "All" || product.category == category) &&
         minPrice <= product.price && product.price <= maxPrice &&
         (product.inStock || !stock)
-    }).sort(getProductCompare(sort))
+    }).sort(getProductCompare(sort)).slice(0, perPage);
 
     if (filteredProducts.length > 0) {
         return (
