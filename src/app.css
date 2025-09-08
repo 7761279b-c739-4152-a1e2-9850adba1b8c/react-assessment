@@ -82,7 +82,8 @@ h3 {
         "a11 a12 . ."
         "a21 a22 . ."
         "a31 a32 a33 a34"
-        "a41 a42 . .";
+        "a41 a42 . ."
+        "a51 a52 . .";
 }
 .filter-grid .grid-33 {
     text-align: center;
@@ -98,3 +99,5 @@ h3 {
 .grid-34 {grid-area: a34;}
 .grid-41 {grid-area: a41;}
 .grid-42 {grid-area: a42;}
+.grid-51 {grid-area: a51;}
+.grid-52 {grid-area: a52;}

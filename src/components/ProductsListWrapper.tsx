@@ -10,9 +10,10 @@ export function ProductsListWrapper() {
     const [minPrice, setMinPrice] = useState(0);
     const [maxPrice, setMaxPrice] = useState(100);
     const [stock, setStock] = useState(false);
+    const [sort, setSort] = useState("name_asc");
 
     return (
-        <FiltersContext value={{ search, setSearch, category, setCategory, minPrice, setMinPrice, maxPrice, setMaxPrice, stock, setStock }}>
+        <FiltersContext value={{ search, setSearch, category, setCategory, minPrice, setMinPrice, maxPrice, setMaxPrice, stock, setStock, sort, setSort }}>
             <Filters />
             <ProductsList />
         </FiltersContext>

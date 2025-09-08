@@ -1,8 +1,10 @@
 import { use, useRef, RefObject } from "react";
 import { FiltersContext } from "../context/FiltersContext";
+import { sortOptions } from "../data/sortOptions";
+import { categories } from "../types/Product";
 
 export function Filters() {
-    const { setSearch, category, setCategory, minPrice, setMinPrice, maxPrice, setMaxPrice, stock, setStock } = use(FiltersContext);
+    const { setSearch, category, setCategory, minPrice, setMinPrice, maxPrice, setMaxPrice, stock, setStock, sort, setSort } = use(FiltersContext);
     let searchInput: RefObject<string> = useRef<string>("");
     let searchDebounce: RefObject<number> = useRef<number>(Date.now());
 
@@ -23,9 +25,9 @@ export function Filters() {
                 <p className="grid-21">In category:</p>
                 <select value={category} onInput={e => setCategory(e.currentTarget.value)} className="grid-22">
                     <option value="All">All</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Books">Books</option>
-                    <option value="Clothing">Clothing</option>
+                    {categories.map((cat, i) => {
+                        return <option key={i} value={cat}>{cat}</option>
+                    })}
                 </select>
                 <p className="grid-31">Price range (£): </p>
                 <input value={minPrice} onInput={e => {
@@ -59,6 +61,12 @@ export function Filters() {
                 <div className="grid-42">
                     <input checked={stock} onChange={e => {setStock(e.target.checked);}} type="checkbox" name="stock" id="stock" />
                 </div>
+                <p className="grid-51">Sort by</p>
+                <select value={sort} onInput={e => setSort(e.currentTarget.value)} className="grid-52">
+                    {sortOptions.map((option, i) => {
+                        return <option key={i} value={option.value}>{option.name}</option>
+                    })}
+                </select>
             </div>
         </div>
     )
