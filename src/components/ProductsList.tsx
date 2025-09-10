@@ -30,37 +30,43 @@ function ProductsListLoaded() {
         (product.inStock || !stock)
     }).sort(getProductCompare(sort)).slice(0, perPage);
 
-    if (filteredProducts.length > 0) {
-        return (
-            <div className="products-list-wrapper">
-                <h2>Products list:</h2>
-                <ul className="products-list">
-                    {filteredProducts
-                        .map((product) => (
-                            <ProductCard key={product.id} product={product} />
-                        ))
-                    }
-                </ul>
-            </div>
-        )
-    } else {
-        return (
-            <div className="products-list-wrapper">
-                <h2>Products list:</h2>
-                <p>No products found</p>
-                <p>Try searching for something different</p>
-            </div>
-        )
-    }
+    return (
+        <div className="products-list-wrapper">
+            <h2>Products list:</h2>
+            {filteredProducts.length > 0 ? (
+                <ProductsListContents filteredProducts={filteredProducts} />
+            ) : (
+                <ProductsListempty />
+            )}
+        </div>
+    )
 }
-
-
 
 function ProductsListSuspense() {
     return (
         <div className="products-list-wrapper">
             <h2>Products list:</h2>
             <p>Loading products...</p>
+        </div>
+    )
+}
+function ProductsListempty() {
+    return (
+        <>
+            <p>No products found</p>
+            <p>Try searching for something different</p>
+        </>
+    )
+}
+
+function ProductsListContents({ filteredProducts }: { filteredProducts: Product[] }) {
+    return (
+        <div className="products-list">
+            {filteredProducts
+                .map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))
+            }
         </div>
     )
 }

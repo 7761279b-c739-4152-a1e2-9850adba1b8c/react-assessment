@@ -26,6 +26,7 @@ h3 {
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
+    max-width: 832px;
 }
 
 .products-list-wrapper {
@@ -37,17 +38,27 @@ h3 {
 .products-list {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: -1rem;
 }
 
 .product-card {
     margin-bottom: 2rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex: 0 192px;
 }
 .product-card img {
     flex-basis: 100px;
-    height: 100px;
     margin-right: 1rem;
+    aspect-ratio: 1 / 1;
+}
+.product-card > div {
+    margin-right: 1rem;
+    padding: 4px 8px 0px;
 }
 .product-card h3 {
     margin: 0.25rem 0;
@@ -67,6 +78,7 @@ h3 {
     background-color: #Cfc;
     padding: 1rem;
     border-radius: 1rem;
+    min-width: fit-content;
 }
 
 .filters h3 {
@@ -74,20 +86,41 @@ h3 {
 }
 
 .filter-grid {
-    max-width: 555px;
     display: grid;
+    max-width: 355px;
+    min-width: 304px;
     gap: 0.25rem;
     margin: 0.25rem 0;
     grid-template-areas:
-        "a11 a12 . ."
-        "a21 a22 . ."
-        "a31 a32 a33 a34"
-        "a41 a42 . ."
-        "a51 a52 . .";
+        "a11 a12"
+        "a21 a22"
+        "a31 a32"
+        "a33 a34"
+        "a41 a42"
+        "a51 a52";
 }
 .filter-grid .grid-33 {
-    text-align: center;
+    text-align: left;
+    margin-left: 64px
 }
+@media (min-width: 650px) {
+    .filter-grid {
+        max-width: 555px;
+        min-width: 504px;
+        grid-template-areas:
+            "a11 a12 . ."
+            "a21 a22 . ."
+            "a31 a32 a33 a34"
+            "a41 a42 . ."
+            "a51 a52 . .";
+    }
+    .filter-grid .grid-33 {
+        text-align: center;
+        margin-left: revert;
+    }
+}
+
+
 
 .grid-11 {grid-area: a11;}
 .grid-12 {grid-area: a12;}

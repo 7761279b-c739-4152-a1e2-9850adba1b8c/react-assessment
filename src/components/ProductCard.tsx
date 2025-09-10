@@ -2,7 +2,7 @@ import { Product } from "../types/Product";
 
 export function ProductCard({ product }: { product: Product; }) {
     return (
-        <li className="product-card">
+        <div className="product-card">
             <img src={ product.imageUrl ? product.imageUrl : undefined}></img>
             <div>
                 <h3>{ product.name }</h3>
@@ -13,6 +13,6 @@ export function ProductCard({ product }: { product: Product; }) {
                 </div>
                 { product.inStock ? 'In stock' : 'Not in stock'}
             </div>
-        </li>
+        </div>
     )
 }
